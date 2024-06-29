@@ -90,10 +90,7 @@ fi
 # Add completion for gh command
 eval "$(gh completion -s bash)"
 
-#  [[ -s "/home/rayj/.gvm/scripts/gvm" ]] && source "/home/rayj/.gvm/scripts/gvm"
-
 # export GOPATH=/var/tmp/$(whoami)/gocode
-# export GO111MODULE=on
 # export HOST=$(hostname -f)
 # export PATH=$PATH:$GOPATH/bin:~/bin
 export PATH=$PATH:~/bin
