@@ -1,7 +1,6 @@
 
 alias sqlhost='MYSQL_HOST=`docker inspect extractionmakeworld_mysql_1 | grep \"IPA | head -n1 | grep \"IPA | cut -d\" -f4`'
 
-alias ls='lsd'
 alias ll='ls -l'
 alias la='ls -A'
 
