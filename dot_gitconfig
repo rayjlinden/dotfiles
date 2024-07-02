@@ -3,8 +3,6 @@
 	email = rayj@lindenlab.com
 [push]
 	default = current
-[url "git@github.com:"]
-	insteadOf = https://github.com/
 [core]
 	editor = vi
 	excludesFile = /var/tmp/rayj/gocode/src/github.com/lindenlab/extraction-makeworld/etc/gitignore_global
