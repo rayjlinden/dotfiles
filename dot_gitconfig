@@ -16,9 +16,9 @@
 	prune = true
 [credential "https://github.com"]
 	helper = 
-	helper = !/var/tmp/mw_pkgs/bin/gh auth git-credential
+	helper = !gh auth git-credential
 [credential "https://gist.github.com"]
 	helper = 
-	helper = !/var/tmp/mw_pkgs/bin/gh auth git-credential
+	helper = !gh auth git-credential
 [init]
 	defaultBranch = main
