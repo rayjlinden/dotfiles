@@ -6,3 +6,7 @@ TODO: test if this works...
 
 chezmoi completion bash > dot_local/share/bash-completion/completions/chezmoi
 gh completion -s bash > dot_local/share/bash-completion/completions/gh
+
+
+### Using global .gitignore
+TODO
