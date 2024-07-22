@@ -1,4 +1,0 @@
-[".gitignore_global"]
-    type = "file"
-    url = "https://raw.githubusercontent.com/lindenlab/extraction-makeworld/blob/main/etc/gitignore_global"
-    refreshPeriod = "168h"
