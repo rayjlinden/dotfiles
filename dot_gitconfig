@@ -5,7 +5,6 @@
 	default = current
 [core]
 	editor = vi
-	excludesFile = ~/.gitignore_global
 [alias]
 	pushup = git push push --set-upstream origin master
 [pull]
