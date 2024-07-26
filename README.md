@@ -45,6 +45,7 @@ Now we can install everthing else from brew which I have saved as a brew bundle.
 The following will update the Brewfile:
 ```sh
   brew bundle dump --force --file .Brewfile
+  chezmoi re-add .Brewfile
 ```
 
 ## Updating completion files
