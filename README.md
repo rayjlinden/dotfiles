@@ -9,12 +9,18 @@ This is Ray Johnson's dotfiles repo.
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-TODO: investigate brew bundle (a way to install a standard set of crap from homebrew)
-
-- chsh  (we use bash but apple's version is too old...)
+Let's start with installing the following two things:
 ```sh
   brew install bash
+  brew install chezmoi
+```
 
+- chsh  
+
+My dotfiles generally assume bash.  However, the default for mac is not
+zsh.  Lets switch it to a newer version of bash.
+
+```sh
   sudo vi /etc/shells
 (add /opt/homebrew/Cellar/bash/5.2.26/bin/bash)
 
@@ -22,14 +28,25 @@ TODO: investigate brew bundle (a way to install a standard set of crap from home
 ```
 
 - chezmoi
-```sh
-  brew install chezmoi 
 
+Ok - let's download and install my dotfiles!
+```sh
   chezmoi init https://github.com/rayjlinden/dotfiles.git
 
   chezmoi apply
 ```
 
+- brew bundle
+Now we can install everthing else from brew which I have saved as a brew bundle.
+
+```sh
+  brew bundle install --file .Brewfile
+```
+
+The following will update the Brewfile:
+```sh
+  brew bundle dump --force --file .Brewfile
+```
 
 ## Updating completion files
 curl -o dot_local/share/bash-completion/completions/git-prompt.sh https://raw.githubusercontent.com/git/git/master/contrib/completion
