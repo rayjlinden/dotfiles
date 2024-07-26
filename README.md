@@ -16,8 +16,9 @@ TODO: investigate brew bundle (a way to install a standard set of crap from home
   brew install bash
 
   sudo vi /etc/shells
+(add /opt/homebrew/Cellar/bash/5.2.26/bin/bash)
 
-  chsh -s /opt/homebrew/bin/bash
+  chsh -s /opt/homebrew/Cellar/bash/5.2.26/bin/bash
 ```
 
 - chezmoi
