@@ -27,7 +27,11 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 
+# Home brew adjustments
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
 # Add these if they exist (these are homebrew locations on Mac)
 if [ -d "/usr/local/bin" ] ; then
     PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 fi
+
