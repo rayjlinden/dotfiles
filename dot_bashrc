@@ -54,8 +54,10 @@ fi
 [[ -f $MAKEWORLD_HOME/etc/token.funcs.sh ]] && source $MAKEWORLD_HOME/etc/token.funcs.sh
 
 # Set prompt for bash shell
-OLD_PS1=$PS1
-PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
+if [ -f "$HOMEBREW_PREFIX/opt/bash-git-prompt/share/gitprompt.sh" ]; then
+     __GIT_PROMPT_DIR="$HOMEBREW_PREFIX/opt/bash-git-prompt/share"
+     source "$HOMEBREW_PREFIX/opt/bash-git-prompt/share/gitprompt.sh"
+fi
 PS1='\[\e[1;32m\]\u\[\e[0;39m\]@\[\e[1;36m\]\h\[\e[0;39m\]:\[\e[1;33m\]$(eval "sps")\[\e[0;39m\]\[\e[1;35m\]$(__git_ps1 " (%s)")\[\e[0;39m\]$ '
 
 sps() {
