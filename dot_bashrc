@@ -24,7 +24,9 @@ HISTFILESIZE=2000
 shopt -s checkwinsize
 
 # Home brew adjustments
-eval "$(/opt/homebrew/bin/brew shellenv)"
+if [ -f /opt/homebrew/bin/brew ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
 
 # Alias definitions.
 if [ -f ~/.bash_aliases ]; then
