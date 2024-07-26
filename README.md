@@ -21,10 +21,9 @@ My dotfiles generally assume bash.  However, the default for mac is not
 zsh.  Lets switch it to a newer version of bash.
 
 ```sh
-  sudo vi /etc/shells
-(add /opt/homebrew/Cellar/bash/5.2.26/bin/bash)
+echo "/opt/homebrew/bin/bash" | sudo tee -a /etc/shells
 
-  chsh -s /opt/homebrew/Cellar/bash/5.2.26/bin/bash
+chsh -s /opt/homebrew/bin/bash
 ```
 
 - chezmoi
