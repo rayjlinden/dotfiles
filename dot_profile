@@ -25,3 +25,9 @@ fi
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
+
+
+# Add these if they exist (these are homebrew locations on Mac)
+if [ -d "/usr/local/bin" ] ; then
+    PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+fi
