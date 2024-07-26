@@ -28,7 +28,7 @@ fi
 
 
 # Home brew adjustments
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Add these if they exist (these are homebrew locations on Mac)
 if [ -d "/usr/local/bin" ] ; then
