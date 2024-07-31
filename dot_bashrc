@@ -16,7 +16,7 @@ HISTTIMEFORMAT='%F %T '
 shopt -s histappend
 shopt -s cmdhist
 shopt -s lithist
-HISTIGNORE='exit:history'
+HISTIGNORE='ls:ll:la:exit:history'
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -32,9 +32,7 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
+# enable programmable completion features 
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
     . /usr/share/bash-completion/bash_completion
@@ -42,12 +40,13 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+if [ -f "$HOMEBREW_PREFIX/etc/bash_completion" ]; then
+     source "$HOMEBREW_PREFIX/etc/bash_completion"
+fi
 
-# export GOPATH=/var/tmp/$(whoami)/gocode
-# export HOST=$(hostname -f)
-# export PATH=$PATH:$GOPATH/bin:~/bin
 export PATH=$PATH:~/bin
 
+# Source makeworld bash script 
 # In codespaces the path would be here: /workspaces/extraction-makeworld
 if [[ -d /workspaces/extraction-makeworld ]]; then
 	export MAKEWORLD_HOME=/workspaces/extraction-makeworld
@@ -55,12 +54,8 @@ else
 	export MAKEWORLD_HOME=/var/tmp/$(whoami)/gocode/src/github.com/lindenlab/extraction-makeworld
 fi
 [[ -f $MAKEWORLD_HOME/etc/makeworld.bash.sh ]] && source $MAKEWORLD_HOME/etc/makeworld.bash.sh
-[[ -f $MAKEWORLD_HOME/etc/token.funcs.sh ]] && source $MAKEWORLD_HOME/etc/token.funcs.sh
 
 # Set prompt for bash shell
-if [ -f "$HOMEBREW_PREFIX/etc/bash_completion" ]; then
-     source "$HOMEBREW_PREFIX/etc/bash_completion"
-fi
 PS1='\[\e[1;32m\]\u\[\e[0;39m\]@\[\e[1;36m\]\h\[\e[0;39m\]:\[\e[1;33m\]$(eval "sps")\[\e[0;39m\]\[\e[1;35m\]$(__git_ps1 " (%s)")\[\e[0;39m\]$ '
 
 if [ -z "$CODESPACES" ]; then
@@ -73,11 +68,6 @@ sps() {
     _dir=${PWD/#$HOME/'~'}
     echo ${_dir/#$ECOM_SRC/'$ECOM_SRC/'}
 }
-
-function title {
-    echo -ne "\033]0;"$*"\007"
-}
-
 
 if [ -f ~/.iterm2_shell_integration.bash ]; then
   export ITERM_ENABLE_SHELL_INTEGRATION_WITH_TMUX=1

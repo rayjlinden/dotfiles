@@ -39,4 +39,45 @@ HISTIGNORE='ls:ll:la:exit:history'
 
 Our complete set of settings for bash history is:
 ```
+HISTSIZE=1000
+HISTFILESIZE=2000
+HISTCONTROL=ignoreboth
+HISTTIMEFORMAT='%F %T '
+shopt -s histappend
+shopt -s cmdhist
+shopt -s lithist
+HISTIGNORE='ls:ll:la:exit:history'
+```
+
+## Bash prompt
+The PS1 var creates a prompt like this:
+`rayj@Rayj-MacMini23:~/.local/share/chezmoi (main)$`
+or 
+`<user name>@<machine name>:<path> (git branch)`
+
+The git functionality comes from the __git_ps1 function that is
+part of bash_completions.
+
+All the other special chars represent colors.  I stole the pallette of 
+colors to use from VSCode cause I thout it looks nice...
+
+The sps function shortens the path so it isn't always too long.  If you are
+below your $HOME directory it will instead show a ~.  I also have a long
+path to my source - so this function shortens it to a variable name.  The
+nice thing about using the variable like this is you can copy the path from
+the prompt and it will work in other code snippets.
+
+```
+PS1='\[\e[1;32m\]\u\[\e[0;39m\]@\[\e[1;36m\]\h\[\e[0;39m\]:\[\e[1;33m\]$(eval "sps")\[\e[0;39m\]\[\e[1;35m\]$(__git_ps1 " (%s)")\[\e[0;39m\]$ '
+
+if [ -z "$CODESPACES" ]; then
+    export ECOM_SRC="/var/tmp/$(whoami)/gocode/src/github.com/lindenlab/"
+else
+    export ECOM_SRC="/workspaces/"
+fi
+
+sps() {
+    _dir=${PWD/#$HOME/'~'}
+    echo ${_dir/#$ECOM_SRC/'$ECOM_SRC/'}
+}
 ```
