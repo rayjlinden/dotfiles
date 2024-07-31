@@ -9,6 +9,20 @@ your .bashrc ever worse.  So instead I explain my settings in this text
 file...
 
 
+## Bash completions
+Here is the core setting that turns on bash completions for mac (with brew_ or linux.
+```
+# enable programmable completion features
+if [ -f "$HOMEBREW_PREFIX/etc/bash_completion" ]; then
+     source "$HOMEBREW_PREFIX/etc/bash_completion"
+elif [ -f /usr/share/bash-completion/bash_completion ]; then
+     source /usr/share/bash-completion/bash_completion
+elif [ -f /etc/bash_completion ]; then
+     source /etc/bash_completion
+fi
+```
+
+
 ## Bash history
 
 - Save 1000 lines of history in memory (default is 500) 

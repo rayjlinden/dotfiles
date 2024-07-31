@@ -2,3 +2,4 @@
 install.sh
 README.md
 BASH_SETTINGS.md
+update_completions.sh
