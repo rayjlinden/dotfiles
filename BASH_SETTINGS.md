@@ -11,8 +11,6 @@ file...
 
 ## Bash history
 
-## Set up history options
-
 - Save 1000 lines of history in memory (default is 500) 
 `HISTSIZE=1000`
 - Save 2000 lines of histor to disk (~/.bash_history) 
