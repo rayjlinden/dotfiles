@@ -9,22 +9,13 @@ case $- in
 esac
 
 ## Set up history options
-# don't put duplicate lines or lines starting with space in the history.
-HISTCONTROL=ignoreboth
-
-# append to the history file, don't overwrite it
-shopt -s histappend
-
-# Support multi line commands in history, and add timestamps to history entries
-shopt -s cmdhist
-shopt -s lithist
-HISTTIMEFORMAT='%F %T '
-
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
 HISTFILESIZE=2000
-
-# Do not store commands in history that are not useful
+HISTCONTROL=ignoreboth
+HISTTIMEFORMAT='%F %T '
+shopt -s histappend
+shopt -s cmdhist
+shopt -s lithist
 HISTIGNORE='exit:history'
 
 # check the window size after each command and, if necessary,
