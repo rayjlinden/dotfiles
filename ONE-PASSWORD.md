@@ -29,4 +29,29 @@ There is a button there to copy the secret key.  Enter it in the command line.
 
 Use `eval $(op signin)` to sign-in.
 
+### Setting a secret in here
+```
+op item create --title Jira --category server --vault Work
+op item edit --vault Work Jira 'JIRA_API_TOKEN[password]=SOME_KEY'
+```
 
+Getting the value:
+```
+op read op://Work/Jira/JIRA_API_TOKEN
+```
+
+# Using OnePassword when installing dotfiles
+You can use onepassword in chezmoi template files to inject secrets into your dot file.
+However, I do not see a good way to make it work with codespaces.  Howver, codespaces
+provides it's own way to keep secrets and expose them as environment variables.
+
+So one solution is to look for the secret in an enviornment variable and if it is not
+there get it from one password.  Here is an example chezmoi template:
+```
+token: {{or (env "JIRA_API_TOKEN") (or (onepasswordRead "op://Work/Jira/JIRA_API_TOKEN") "no value set")}}
+```
+
+You can set the value in GitHub like this:
+```
+gh secret set JIRA_API_TOKEN --user --body "my token"
+```

@@ -1,4 +1,3 @@
 current_user_account_id: 5b46894db226592c200357e0
 email: rayj@lindenlab.com
-token: JzFvEVCU7SJxmm1XZ7vX830C
-token2: {{env "JIRA_API_TOKEN"}}
+token: {{or (env "JIRA_API_TOKEN") (or (onepasswordRead "op://Work/Jira/JIRA_API_TOKEN") "no value set")}}
