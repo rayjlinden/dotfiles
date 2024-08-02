@@ -1,3 +1,11 @@
+{{- $codespaces:= env "CODESPACES" | not | not -}}
+sourceDir = {{ .chezmoi.sourceDir | quote }}
+
 [git]
     autoCommit = true
     autoPush = true 
+
+[data]
+    name = "Ray Johnson"
+    codespaces = {{ $codespaces }}
+
