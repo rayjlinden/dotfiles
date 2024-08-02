@@ -1,6 +1,4 @@
 
-alias sqlhost='MYSQL_HOST=`docker inspect extractionmakeworld_mysql_1 | grep \"IPA | head -n1 | grep \"IPA | cut -d\" -f4`'
-
 alias ll='ls -l'
 alias la='ls -A'
 
@@ -23,4 +21,4 @@ fi
 alias renamew='tmux rename-window'
 
 # common chezmoi or nb files I edit
-alias edit-aliases='chezmoi edit ~/.bash_aliases --apply'
+alias edit-aliases='chezmoi edit ~/.bash_aliases --apply; source ~/.bash_aliases'
