@@ -20,5 +20,8 @@ fi
 # tmux related aliases
 alias renamew='tmux rename-window'
 
-# common chezmoi or nb files I edit
+# common chezmoi files I edit
 alias edit-aliases='chezmoi edit ~/.bash_aliases --apply; source ~/.bash_aliases'
+
+# common nb files I edit
+alias edit-prs='EDITOR=vi nb edit pull-requests.md'
