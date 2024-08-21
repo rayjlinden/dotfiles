@@ -45,10 +45,10 @@ export PATH=$PATH:~/bin
 
 # Source makeworld bash script 
 # In codespaces the path would be here: /workspaces/extraction-makeworld
-if [[ -d /workspaces/extraction-makeworld ]]; then
-	export MAKEWORLD_HOME=/workspaces/extraction-makeworld
-else
+if [ -z "$CODESPACES" ]; then
 	export MAKEWORLD_HOME=/var/tmp/$(whoami)/gocode/src/github.com/lindenlab/extraction-makeworld
+else
+	export MAKEWORLD_HOME=/workspaces/extraction-makeworld
 fi
 [[ -f $MAKEWORLD_HOME/etc/makeworld.bash.sh ]] && source $MAKEWORLD_HOME/etc/makeworld.bash.sh
 
