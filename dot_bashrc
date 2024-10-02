@@ -71,3 +71,6 @@ if [ -f ~/.iterm2_shell_integration.bash ]; then
   . ~/.iterm2_shell_integration.bash
   export PATH=$PATH:~/.iterm2
 fi
+
+export JIRA_API_TOKEN=ATATT3xFfGF0shWBogfQC1DChiXPrcid8AiYiUipYVtL0MgncJTXciriXVi9zcXXVTMEyBrcFAK9_OAaz73jpIOKeEg2two51Vn4ipUe0snMbWFP878O8K4ho8BwT6DQU70RtuaM1Vcc4PI4EBhOzes5CRB0lL2iDURPUi7_G59IeNbBEVZ0b8M=8717B4A4
+
