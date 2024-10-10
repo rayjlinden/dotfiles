@@ -9,6 +9,11 @@ This is Ray Johnson's dotfiles repo.
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
+```sh
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+```
+
+
 Let's start with installing the following two things:
 ```sh
   brew install bash
