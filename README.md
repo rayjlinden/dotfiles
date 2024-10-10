@@ -13,6 +13,8 @@ Let's start with installing the following two things:
 ```sh
   brew install bash
   brew install chezmoi
+
+  curl https://raw.githubusercontent.com/rayjlinden/dotfiles/refs/heads/main/dot_Brewfile > Brewfile
 ```
 
 - chsh  
