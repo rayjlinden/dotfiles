@@ -52,6 +52,9 @@ else
 fi
 [[ -f $MAKEWORLD_HOME/etc/makeworld.bash.sh ]] && source $MAKEWORLD_HOME/etc/makeworld.bash.sh
 
+# Source secrets (the file being sourced should not go in chezmoi)
+[[ -f ~/.secrets.env ]] && source ~/.secrets.env
+
 # Set prompt for bash shell
 PS1='\[\e[1;32m\]\u\[\e[0;39m\]@\[\e[1;36m\]\h\[\e[0;39m\]:\[\e[1;33m\]$(eval "sps")\[\e[0;39m\]\[\e[1;35m\]$(__git_ps1 " (%s)")\[\e[0;39m\]$ '
 
