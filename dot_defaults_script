@@ -1,0 +1,8 @@
+# This script is not atumatically run or anything
+# It helps set some useful defaults on a new mac.  So only really needs
+# be executed once when setting up a new Mac.
+
+defaults write com.apple.finder AppleShowAllFiles -bool true
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+defaults write com.apple.finder QuitMenuItem -bool true
+killall Finder
