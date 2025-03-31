@@ -6,3 +6,9 @@ defaults write com.apple.finder AppleShowAllFiles -bool true
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 defaults write com.apple.finder QuitMenuItem -bool true
 killall Finder
+
+# This article was helpful:
+# https://medium.com/@andriizolkin/unlock-the-incredible-hidden-macos-settings-with-the-terminal-app-81c27e07d1ed
+
+# But all options appear to be updated here:
+# https://macos-defaults.com/
