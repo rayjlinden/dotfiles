@@ -41,7 +41,7 @@ elif [ -f /etc/bash_completion ]; then
      source /etc/bash_completion
 fi
 
-export PATH=$PATH:~/bin
+export PATH=$PATH:~/bin:~/.local/bin
 
 # Source makeworld bash script 
 # In codespaces the path would be here: /workspaces/extraction-makeworld
