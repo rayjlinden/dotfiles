@@ -80,3 +80,5 @@ export JIRA_API_TOKEN=ATATT3xFfGF0shWBogfQC1DChiXPrcid8AiYiUipYVtL0MgncJTXciriXV
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - bash)"
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
